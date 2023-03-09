@@ -2,18 +2,16 @@
 if __name__ == "__main__":
     import sys
 
-    n = len(sys.argv) - 1
+    args = sys.argv[1:]
+    n = len(args)
+    ind = 1
 
     if n == 0:
-        print("{} arguments.".format(n))
+        print("{:d} arguments.".format(n))
     elif n == 1:
-        print("{} argument:".format(n))
+        print("{:d} argument:".format(n))
     else:
-        print("{} arguments:".format(n))
-
-    if n >= 1:
-        n = 0
-        for arg in sys.argv:
-            if n != 0:
-                print("{}: {}".format(n, arg))
-                n += 1
+        print("{:d} arguments:".format(n))
+        while ind <= n:
+            print("{:d}: {:s}".format(ind, sys.argv[ind]))
+            ind += 1
