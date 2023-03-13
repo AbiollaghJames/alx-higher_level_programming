@@ -4,21 +4,25 @@ def add_tuple(tuple_a=(), tuple_b=()):
     a_len = len(tuple_a)
     b_len = len(tuple_b)
 
-    new_tuple = ()
+    if a_len == 0:
+        a1 = 0
+        a2 = 0
+    elif a_len == 1:
+        a1 = tuple_a[0]
+        a2 = 0
+    else:
+        a1 = tuple_a[0]
+        a2 = tuple_a[1]
 
-    for i in range(2):
-        if i >= a_len:
-            a = 0
-        else:
-            a = tuple_a[i]
+    if b_len == 0:
+        b1 = 0
+        b2 = 0
+    elif b_len == 1:
+        b1 = tuple_b[0]
+        b2 = 0
+    else:
+        b1 = tuple_b[0]
+        b2 = tuple_b[1]
 
-        if i >= b_len:
-            b = 0
-        else:
-            b = tuple_b[i]
-
-        if (i == 0):
-            new_tuple = (a + b)
-        else:
-            new_tuple = (new_tuple, a, b)
+    new_tuple = (a1 + b1, a2 + b2)
     return (new_tuple)
