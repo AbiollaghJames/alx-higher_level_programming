@@ -2,6 +2,3 @@
 
 class Square:
     pass
-
-
-sq = Square()
