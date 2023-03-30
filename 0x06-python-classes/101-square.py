@@ -16,7 +16,7 @@ class Square:
         """
 
         if self.size:
-            return '\n' * self.positioin[1] + '\n'.join([' ' * self.position[0] + '#' * self.size] * self.size)
+            return '\n' * self.position[1] + '\n'.join([' ' * self.position[0] + '#' * self.size] * self.size)
         return str()
 
     @property
