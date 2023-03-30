@@ -1,51 +1,63 @@
 #!/usr/bin/python3
-"""define class"""
+""" Definition of a class 'Square'
+"""
 
 
-class Square:
-    """define square"""
-
+class Square():
+    """ Definition of a 'Square'
+    """
     def __init__(self, size=0):
-        """instance of square"""
-
+        """ Instantiate a 'Square'
+        """
         self.size = size
 
-    def area(self):
-        """compute area"""
+    def __lt__(self, to_compare):
+        """ Compare the area of two squares
+        """
+        return self.area() < to_compare.area()
 
-        return self.size ** 2
+    def __le__(self, to_compare):
+        """ Compare the area of two squares
+        """
+        return self.area() <= to_compare.area()
 
-    def eq(self, to_comp):
-        return self.area() == to_comp.area()
+    def __eq__(self, to_compare):
+        """ Compare the area of two squares
+        """
+        return self.area() == to_compare.area()
 
-    def not_eq(self, to_comp):
-        return self.area() != to_comp.area()
+    def __ne__(self, to_compare):
+        """ Compare the area of two squares
+        """
+        return self.area() != to_compare.area()
 
-    def less(self, to_comp):
-        return self.area() < to_comp.area()
+    def __ge__(self, to_compare):
+        """ Compare the area of two squares
+        """
+        return self.area() >= to_compare.area()
 
-    def great_eq(self, to_comp):
-        return self.area() >= to_comp.area()
-
-    def great(self, to_comp):
-        return self.area() > to_comp.area()
-
-    def less_eq(self, to_comp):
-        return self.area() <= to_comp.area()
+    def __gt__(self, to_compare):
+        """ Compare the area of two squares
+        """
+        return self.area() > to_compare.area()
 
     @property
     def size(self):
-        """Get size"""
-
+        """ Get the size of a square
+        """
         return self.__size
 
     @size.setter
-    def size(self, value):
-        """set size"""
-        if type(value) is int:
-            if value >= 0:
-                self.__size = value
-            else:
-                raise ValueError("size must be >= 0")
-        else:
+    def size(self, size):
+        """ Set the size of a square
+        """
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
+
+    def area(self):
+        """ Compute the area of a 'Square'
+        """
+        return self.size ** 2
