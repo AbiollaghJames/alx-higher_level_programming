@@ -1,0 +1,59 @@
+Testing '0-add_integer.py' module
+
+---------------------------------------
+
+Use 'add_integer'
+---------------------------------------
+
+Importations of function for the  module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Importation/checking of docstring:
+	>>> mod = __import__("0-add_integer").__doc__
+	>>> len(mod) > 1
+	True
+---------------------------------------
+
+Using the add_integer function
+
+Normal addition of numbers:
+	>>> add_integer(4, 8)
+	12
+
+Negative and Positive addition and vice verse:
+	>>> add_integer(-3, 5)
+	2
+	>>> add_integer(1, -3)
+	-2
+
+Addition of multiple values:
+	>>> [add_integer(i, i ** 2) for i in range(3)]
+	[0, 2, 6]
+
+Addition of Float and int and vice verse:
+	>>> add_integer(3.5, 2)
+	6
+	>>> add_integer(3, 2.3)
+	5
+
+Addition of two Float numbers:
+	>>> add_integer(3.5, 5.5)
+	10
+
+Addition of long Float:
+	>>> add_integer(7.70000647000054873, 4)
+	12
+
+Addition of Boolean and int and vice verse:
+	>>> add_integer(True, 9)
+	Traceback(most recent call last)
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(8, False)
+	Traceback(most recent call last)
+	...
+	TypeError: a must be an integer
+
+Addition of Non-numbers and int and vice verse:
+	>>> add_integer()
