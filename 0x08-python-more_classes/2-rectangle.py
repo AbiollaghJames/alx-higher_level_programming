@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""class Rectangle"""
 
 
 class Rectangle:
@@ -10,14 +11,17 @@ class Rectangle:
 
     @property
     def width(self):
+        """retrive width"""
         return self.__width
 
     @property
     def height(self):
+        """retrieve height"""
         return self.__height
 
     @width.setter
     def width(self, value):
+        """set width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -27,6 +31,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """set height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -35,10 +40,12 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """compute area"""
         return self.__width * self.__height
 
     def perimeter(self):
-        if self.__width == 0 and self.__height == 0:
-            perimeter == 0
+        """compute perimeter"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
         else:
-            return (self.__width * 2) + (self.__height * 2)
+            return ((self.__width * 2) + (self.__height * 2))
