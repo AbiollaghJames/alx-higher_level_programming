@@ -60,6 +60,7 @@ class Rectangle:
     def __repr__(self):
         """return object func rep of rectangle"""
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
     def __del__(self):
         """detects instance deletion"""
         print("Bye rectangle...")
