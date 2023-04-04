@@ -1,0 +1,41 @@
+The '3-say_my_name' module
+------------------------------------------
+
+Importation of function from module:
+	>>>say_my_name = __import__("3-say_my_name").say_my_name
+
+Check module docstring:
+	>>> mod = __import__("3-say_my_name")/__doc__
+	>>> le(mod) > 1
+	True
+
+Check docstring function:
+	>>> func = __import__("3-say_my_name").say_my_name.__doc__
+	>>> len(fun) > 1
+	True
+
+Normal usage:
+	>>> say_my_name("abiollagh". "james")
+	My name is abiollagh james
+
+Check one argument:
+	>>> say_my_name("abiollagh")
+	My name is abiollagh
+
+More than 2 arguments:
+	>>> say_my_name("abiollagh", "james", "programmer")
+	Traceback(most recent call last)
+	...
+	TypeError: say_my_name()takes from 1 to 2 positional argumets but 3 were given
+
+Wrong type of arg at first_name:
+	>>> say_my_name(2, "james")
+	Traceback(most recent call last)
+	...
+	TypeError: first_name must be a string
+
+Wrong type of arg as last_name:
+	>>> say_my_name("abiollagh", 1)
+	Traceback(most recent call last)
+	...
+	TypeError: last_name must be a string

@@ -56,4 +56,7 @@ Addition of Boolean and int and vice verse:
 	TypeError: a must be an integer
 
 Addition of Non-numbers and int and vice verse:
-	>>> add_integer()
+	>>> add_integer('3', 9)
+	Traceback(most recent call last)
+	...
+	TypeError: a must be an integer
