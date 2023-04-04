@@ -1,1 +1,6 @@
 262
+
+"""
+When python interpreter starts, int objects are pre allocated for itegers ranging from -5 to 256. Python does this to increase program efficiency by reusing int objects rather than creating new ones everytime an integer is used in the code
+Because pre allocated integers range is between -5 to 256, a total of of 262 integers are pre allocated i.e. (257 - (-5)). As a result the number of int objects  reated before executing line 2 is 262
+"""
