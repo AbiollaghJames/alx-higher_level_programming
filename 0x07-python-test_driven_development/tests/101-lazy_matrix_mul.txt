@@ -1,0 +1,60 @@
+The ``101-lazy_matrix_mul`` module
+---------------------------------------------
+
+Using ``lazy-matrix_mul``
+----------------------------------------------
+
+Importing the function from the module:
+	>>> lazy-matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+Checking for module docstring:
+	 >>> mod = __import__("101-lazy_matrix_mul").__doc__
+	 >>> len(mod) > 1
+	 True
+
+Checking for function docstring:
+	 >>> func = __import__("101-lazy_matrix_mul").matrix_mul.__doc__
+         >>> len(func) > 1
+         True
+
+Passing empty m_a:
+	 >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: m_a can't be empty
+
+Passing m_a with empty rows:
+	 >>> lazy_matrix_mul([[], []], [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: m_a can't be empty
+
+Passing empty m_b:
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: m_b can't be empty
+
+Passing m_b with empty rows:
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[]])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: m_b can't be empty
+
+No args:
+	 >>> lazy_matrix_mul()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+One or few args:
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+Too many args:
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: matrix_mul() takes 2 positional arguments but 3 were given
