@@ -1,29 +1,29 @@
 ------------------------------------------
-Using the module 7-base_geometry.py
+Using the module 7-base_geometry
 -----------------------------------------
 
 
-The function 'integer_validator()' returns True if a value is an integer.
-
 Importation
-   >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-   >>> bg = BaseGeometry()
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
 
 Test with positive values
-   >>> bg.integer_validator("my_int", 2)
-   True
+	>>> bg.integer_validator("my_int", 2)
 
 Test with negative values
-   >>> bg.integer_validator("number", -6)
-   Traceback (most recent call last):
-   ValueError: number must be greater than 0
+	>>> bg.integer_validator("number", -6)
+	Traceback (most recent call last):
+	...
+	ValueError: number must be greater than 0
 
 Test with more arguments
-   >>> bg.integer_validator("number", 5, 1)
-   Traceback (most recent call last):
-   TypeError: integer_validator() takes 2 positional arguments but 3 were given
+	>>> bg.integer_validator("number", 5, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() takes 2 positional arguments but 3 were given
 
 Test with infinite values
-   >>> bg.integer_validator("infnumber", int('inf'))
-   Traceback (most recent call last):
-   ValueError: invalid literal for int() with base 10: 'inf'
+	>>> bg.integer_validator("infnumber", int('inf'))
+	Traceback (most recent call last):
+	...
+	ValueError: invalid literal for int() with base 10: 'inf'
