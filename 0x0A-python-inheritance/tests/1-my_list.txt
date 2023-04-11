@@ -16,11 +16,13 @@ When None value is passed
 	>>> my_list.append(None)
 	>>> my_list.print_sorted()
 	Traceback (most recent call last):
+	...
 	TypeError: None is not of type int
 
 When NULL is passed
 	>>> my_list.append(NULL)
 	Traceback (most recent call last):
+	...
 	NameError: name 'NULL' is undefined
 
 When Negative value is added
