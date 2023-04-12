@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module that adds agrs to python list """
-
+import json
+import os.path
 from sys import argv
 
 
@@ -10,7 +11,8 @@ load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 my_list = []
 
-my_list = load_from_json_file(filename)
+if os.path.exists(filename):
+    my_list = load_from_json_file(filename)
 
 for index in argv[1:]:
     my_list.append(index)
