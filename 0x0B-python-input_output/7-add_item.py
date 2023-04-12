@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Module that adds agrs to python list """
 
-import json
 from sys import argv
 
 
