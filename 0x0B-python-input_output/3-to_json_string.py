@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """ Module to_json_string function """
+import json
 
 
 
