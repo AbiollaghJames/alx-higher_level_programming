@@ -10,7 +10,7 @@ def append_after(filename="", search_string="", new_string=""):
         for line in read:
             text += line
             if search_string in line:
-                text += n_string
+                text += new_string
 
     with open(filename, "w") as writen:
         written.write(text)
