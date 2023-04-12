@@ -2,6 +2,7 @@
 """ Module that adds agrs to python list """
 import json
 import os.path
+import sys
 from sys import argv
 
 
@@ -14,7 +15,7 @@ my_list = []
 if os.path.exists(filename):
     my_list = load_from_json_file(filename)
 
-for index in argv[1:]:
-    my_list.append(index)
+for i in argv[1:]:
+    my_list.append(i)
 
 save_to_json_file(my_list, filename)
