@@ -12,8 +12,10 @@ class Student:
 
     def to_json(self, attrs=None):
         """ retrieves dict rep of class """
-        if (type(attrs) == list and all(type(elem) == str for elem in attrs)):
-            return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
+        if (type(attrs) == list and
+                all(type(elem) == str for elem in attrs)):
+            return {key: getattr(self, key)
+                    for key in attrs if hasattr(self, key)}
         else:
             return self.__dict__
 
