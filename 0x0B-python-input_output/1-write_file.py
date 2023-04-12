@@ -7,9 +7,6 @@ def write_file(filename="", text=""):
     with open(filename, "w", encoding="UTF-8") as myFile:
         myFile.write(text)
 
-        char = 0
+        chars = len(text)
 
-        for char in text:
-            char += 1
-
-        return char
+        return chars
