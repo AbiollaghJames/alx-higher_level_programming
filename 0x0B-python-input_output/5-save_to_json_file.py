@@ -1,4 +1,4 @@
-#!/usr/bin.python3
+#!/usr/bin/python3
 """ Module with save_to_json_fie function """
 import json
 
