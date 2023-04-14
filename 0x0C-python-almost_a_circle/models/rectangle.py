@@ -77,3 +77,7 @@ class Rectangle(Base):
     def display(self):
         """ prints # pattern of the rectangle """
         print(('#' * self.__width + '\n') * self.__height, end='')
+
+    def __str__(self):
+        """ prints string rep of the rectangle """
+        return "[{:s}] (:d{}) {:d}/{:d} - {:d}/{:d}".format(type(self).__name__, self.id, self.__x, self.__y, self.__width, self.__height)
