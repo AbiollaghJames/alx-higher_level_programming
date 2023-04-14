@@ -76,7 +76,15 @@ class Rectangle(Base):
 
     def display(self):
         """ prints # pattern of the rectangle """
-        print(('#' * self.__width + '\n') * self.__height, end='')
+        for i in range(self.__y):
+            print()
+
+        for j in range(self.__height):
+                print(' ' * self.__x, end="")
+
+                for k in range(self.__width):
+                    print("#", end="")
+                print()
 
     def __str__(self):
         """ prints string rep of the rectangle """
