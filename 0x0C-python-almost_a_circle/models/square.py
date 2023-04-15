@@ -16,3 +16,14 @@ class Square(Rectangle):
     def __str__(self):
         """ print string rep of square """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(type(self).__name__, self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        """ get size """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ set size """
+        self.width = value
+        self.height = value
