@@ -53,3 +53,20 @@ class Square(Rectangle):
                     self.x = kwargs[key]
                 elif key == "y":
                     self.y = kwargs[key]
+
+    def to_dictionary(self):
+        """ return dictionary rep of a class """
+        my_dict = {"id": 0, "size": 0, "x": 0, "y": 0}
+
+        for key in my_dict:
+            if key == "id":
+                my_dict[key] = self.id
+            elif key == "size":
+                my_dict[key] = self.width
+                my_dict[key] = self.height
+            elif key == "x":
+                my_dict[key] = self.x
+            elif key == "y":
+                my_dict[key] = self.y
+
+        return my_dict
