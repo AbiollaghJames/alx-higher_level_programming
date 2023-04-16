@@ -106,7 +106,7 @@ class Rectangle(Base):
             elif key == "y":
                 my_dict[key] = self.y
 
-            return my_dict
+        return my_dict
 
     def update(self, *args, **kwargs):
         """ assign args to eah attribute """
