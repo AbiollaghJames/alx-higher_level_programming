@@ -4,7 +4,6 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 import json
-import pep8
 
 
 class TestBase(unittest.TestCase):
@@ -21,7 +20,7 @@ class TestBase(unittest.TestCase):
         b2 = Base()
         self.assertIsInstance(b2, Base)
 
-    def test_numObj(self):
+    def test_numOfObj(self):
         """check number of objects"""
         Base._Base__nb_objects = 0
         b3 = Base()
@@ -31,9 +30,9 @@ class TestBase(unittest.TestCase):
         """check to_json_string"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 7, 2, 8)
-        a_dict = r1.to_dictionary()  # dict
-        json_string = json.dumps([a_dict])  # str of list dict
-        json_listdict = r1.to_json_string([a_dict])  # str of list dict
+        my_dict = r1.to_dictionary()
+        json_string = json.dumps([my_dict])
+        json_listdict = r1.to_json_string([my_dict])
         self.assertTrue(json_string == json_listdict)
 
     def test_saveToFile(self):
@@ -41,19 +40,19 @@ class TestBase(unittest.TestCase):
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
-        a_dict = [r1.to_dictionary(), r2.to_dictionary()]  # list dict
+        my_dict = [r1.to_dictionary(), r2.to_dictionary()]
         Rectangle.save_to_file([r1, r2])
-        with open("Rectangle.json", "r") as file:
-            list_dict = json.loads(file.read())  # list dict
-        self.assertTrue(a_dict == list_dict)
+        with open("Rectangle.json", "r") as my_file:
+            list_dict = json.loads(my_file.read())
+        self.assertTrue(my_dict == list_dict)
 
     def test_fromJsonString(self):
         """check from_json_string"""
         Base._Base__nb_objects = 0
         list_input = [{'id': 89, 'width': 10, 'height': 4},
-                      {'id': 7, 'width': 1, 'height': 7}]  # list dict
-        json_list_input = Rectangle.to_json_string(list_input)  # str list dict
-        list_output = Rectangle.from_json_string(json_list_input)  # list dict
+                      {'id': 7, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
         self.assertTrue(list_input == list_output)
 
     def test_create(self):

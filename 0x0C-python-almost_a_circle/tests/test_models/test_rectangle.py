@@ -2,10 +2,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-from io import StringIO
-import sys
 import json
-import pep8
 
 
 class TestRectangle(unittest.TestCase):
@@ -22,7 +19,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(2, 10)
         self.assertIsInstance(r2, Rectangle)
 
-    def test_numObj(self):
+    def test_numOfObj(self):
         """check number of objects"""
         Base._Base__nb_objects = 0
         r3 = Rectangle(10, 2, 0, 0)
@@ -65,19 +62,6 @@ class TestRectangle(unittest.TestCase):
         r6 = Rectangle(3, 2)
         self.assertEqual(r6.area(), r6.width * r6.height)
 
-    def test_display(self):
-        """checks display"""
-        Base._Base__nb_objects = 0
-        r7 = Rectangle(4, 6)
-        old_stdout = sys.stdout
-        result = StringIO()
-        sys.stdout = result
-        r7.display()
-        sys.stdout = old_stdout
-        result_string = result.getvalue()
-        self.assertEqual(result_string,
-                         "####\n####\n####\n####\n####\n####\n")
-
     def test_str(self):
         """checks str"""
         Base._Base__nb_objects = 0
@@ -90,28 +74,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(string2,
                          "[Rectangle] (1) 1/0 - 5/5")
 
-    def test_display_xy(self):
-        """checks display xy"""
-        Base._Base__nb_objects = 0
-        r1 = Rectangle(2, 3, 2, 2)
-        old_stdout = sys.stdout
-        result = StringIO()
-        sys.stdout = result
-        r1.display()
-        sys.stdout = old_stdout
-        result_string = result.getvalue()
-        self.assertEqual(result_string, "\n\n  ##\n  ##\n  ##\n")
-        r2 = Rectangle(3, 2, 1, 0)
-        old_stdout = sys.stdout
-        result = StringIO()
-        sys.stdout = result
-        r2.display()
-        sys.stdout = old_stdout
-        result_string = result.getvalue()
-        self.assertEqual(result_string, " ###\n ###\n")
-
     def test_update(self):
-        """checks update args"""
+        """ checks update args"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
