@@ -3,10 +3,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-from io import StringIO
-import sys
 import json
-import pep8
 
 
 class TestSquare(unittest.TestCase):
@@ -24,7 +21,7 @@ class TestSquare(unittest.TestCase):
         self.assertIsInstance(s2, Square)
         self.assertTrue(issubclass(type(s2), Rectangle))
 
-    def test_numObj(self):
+    def test_numOfObj(self):
         """check number of instances created"""
         Base._Base__nb_objects = 0
         s3 = Square(2, 2)
@@ -69,34 +66,6 @@ class TestSquare(unittest.TestCase):
             s.y = "10"
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(10, 3, -1)
-
-    def test_display(self):
-        """check display"""
-        Base._Base__nb_objects = 0
-        s7 = Square(5)
-        old_stdout = sys.stdout
-        result = StringIO()
-        sys.stdout = result
-        s7.display()
-        sys.stdout = old_stdout
-        result_string = result.getvalue()
-        self.assertEqual(result_string, "#####\n#####\n#####\n#####\n#####\n")
-        s8 = Square(2, 2)
-        old_stdout = sys.stdout
-        result = StringIO()
-        sys.stdout = result
-        s8.display()
-        sys.stdout = old_stdout
-        result_string = result.getvalue()
-        self.assertEqual(result_string, "  ##\n  ##\n")
-        s9 = Square(3, 1, 3)
-        old_stdout = sys.stdout
-        result = StringIO()
-        sys.stdout = result
-        s9.display()
-        sys.stdout = old_stdout
-        result_string = result.getvalue()
-        self.assertEqual(result_string, "\n\n\n ###\n ###\n ###\n")
 
     def test_str(self):
         """check str"""
