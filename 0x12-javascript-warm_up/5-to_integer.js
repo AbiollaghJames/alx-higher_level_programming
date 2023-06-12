@@ -4,7 +4,7 @@
  * print something if 1st arg can be converted to an int
  */
 
-const num = Math.floor(parseInt(process.argv[2]));
+const num = Math.floor(Number(process.argv[2]));
 
 if (!isNaN(num) && Number.isInteger(num)) {
   console.log('My number: ', num);
