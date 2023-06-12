@@ -4,7 +4,7 @@
  * script that searches the second biggest integer in the list of arguments.
  */
 
-const num = process.argv
+const num = process.argv;
 
 if (num.length <= 3) {
   console.log(0);
