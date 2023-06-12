@@ -4,9 +4,11 @@
  * script that searches the second biggest integer in the list of arguments.
  */
 
-if (process.argv.length <= 3) {
+const num = process.argv
+
+if (num.length <= 3) {
   console.log(0);
 } else {
-  const num = process.argv.sort();
-  console.log(num.reverse()[1]);
+  const sort = num.slice(2).sort((a, b) => a - b);
+  console.log(sort[sort.length - 2]);
 }
