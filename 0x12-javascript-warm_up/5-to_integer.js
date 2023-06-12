@@ -6,7 +6,7 @@
 
 const num = Math.floor(Number(process.argv[2]));
 
-if (!isNaN(num) && Number.isInteger(num)) {
+if (Number.isInteger(num)) {
   console.log('My number: ', num);
 } else {
   console.log('Not a number');
