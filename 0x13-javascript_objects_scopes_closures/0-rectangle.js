@@ -5,7 +5,7 @@
  */
 
 class Rectangle {
-	// Empty class
+// Empty class
 }
 
-module.exports = Rectangle; 
+module.exports = Rectangle;
