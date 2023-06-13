@@ -6,7 +6,7 @@
 
 const list = require('./100-data.js').list;
 const newArray = list.map((value, i) => {
-	return value * i;
+  return value * i;
 });
 console.log(list);
 console.log(newArray);
