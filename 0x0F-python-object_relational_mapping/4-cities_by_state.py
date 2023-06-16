@@ -17,8 +17,8 @@ if __name__ == "__main__":
             )
 
     curr = db.cursor()
-    curr.execute("SELECT cities.state_id, cities.name, states.name FROM cities \
-            INNER JOIN states ON cities.state_id = states.id")
+    curr.execute("SELECT cities.state_id, cities.name, states.name \
+            FROM cities INNER JOIN states ON cities.state_id = states.id")
     rows = curr.fetchall()
 
     for row in rows:
