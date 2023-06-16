@@ -18,7 +18,7 @@ if __name__ == "__main__":
             )
     curr = db.cursor()
     name_searched = sys.argv[4]
-    querry = "SELECT * FROM states WHERE name = {} ORDER BY id ASC".format(name_searched)
+    querry = "SELECT * FROM states WHERE name = BINARY '{:s}' ORDER BY id ASC".format(name_searched)
     curr.execute(querry, (name_searched, ))
     res = curr.fetchall()
 
