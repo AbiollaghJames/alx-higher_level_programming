@@ -18,7 +18,8 @@ if __name__ == "__main__":
             )
     name_searched = sys.argv[4]
     curr = db.cursor()
-    curr.execute("SELECT * FROM states WHERE name = BINARY '{:s}' ORDER BY id ASC;".format(name_searched))
+    curr.execute("SELECT * FROM states WHERE \
+            name = BINARY '{:s}' ORDER BY id ASC;".format(name_searched))
     res = curr.fetchall()
 
     for row in res:
