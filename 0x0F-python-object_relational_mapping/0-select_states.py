@@ -10,19 +10,14 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    pasword = sys.argv[2]
-    db_name = sys.argv[3]
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
 
-    conn = MySQLdb.connect(host="localhost", user="username", passwd="password", db="db_name")
-    curr = conn.cursor()
-
+    curr = db.curso()
     curr.execute("SELECT * FROM states")
-    res = curr.fetchall()
 
+    res = curr.fetchall()
     for row in res:
         print(row)
 
     curr.close()
-    conn.close()
-
+    db.close()
