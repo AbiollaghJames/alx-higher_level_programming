@@ -22,13 +22,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    names = session.query(State).order_by(State.id).all()
-    new_names = []
+    names = session.query(State).filter(State.name.like('%a%')) \
+            order_by(State.id).all()
 
     for name in names:
-        new_names.append(name)
-
-        for letter in new_names:
-            if 'a' in letter:
-                print("{}: {}".format(name.id, letter))
+        print("{}: {}".format(name.id, name.name))
     session.close()
