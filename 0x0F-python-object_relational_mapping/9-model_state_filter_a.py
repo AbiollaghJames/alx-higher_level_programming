@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
- a script that lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+ a script that lists all State objects
+ that contain the letter a from the database hbtn_0e_6_usa
 """
 
 
@@ -29,5 +30,5 @@ if __name__ == "__main__":
 
         for letter in new_names:
             if 'a' in letter:
-                print(letter)
+                print("{}: {}".format(name.id, letter))
     session.close()
