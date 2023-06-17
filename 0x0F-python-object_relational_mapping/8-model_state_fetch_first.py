@@ -22,8 +22,10 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State)
-    f_row = query.one()
+    f_row = query.first()
     if f_row is not None:
         print("{}: {}".format(f_row.id, f_row.name))
+    else:
+        print("Nothing")
 
     session.close()
