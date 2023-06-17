@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State)
-    f_row = query.first()
+    f_row = query.one()
     if f_row is not None:
         print("{}: {}".format(f_row.id, f_row.name))
 
