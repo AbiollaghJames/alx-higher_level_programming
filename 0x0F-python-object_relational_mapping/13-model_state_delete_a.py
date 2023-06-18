@@ -25,6 +25,6 @@ if __name__ == "__main__":
     res = session.query(State).filter(State.name.like('%a%'))
     for record in res:
         session.delete(record)
-        session.commit()
 
+    session.commit()
     session.close()
