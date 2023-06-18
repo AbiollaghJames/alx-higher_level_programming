@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session()
 
     res = session.query(City, State).filter(City.state_id == State.id)\
-            .order_by(City.id).all()
+        .order_by(City.id).all()
 
     for c, s in res:
         print("{}: ({}) {}".format(s.name, c.id, c.name))
