@@ -23,9 +23,11 @@ if __name__ = "__main__":
     session = Session()
 
     name_searched = sys.argv[4]
-    res = session.querry(State).filter_by(name=name_searched)
+    res = session.querry(State).filter_by(name=name_searched).first()
 
     if res:
         print("{}".format(res.id))
     else:
         print("Not found")
+
+    session.close()
