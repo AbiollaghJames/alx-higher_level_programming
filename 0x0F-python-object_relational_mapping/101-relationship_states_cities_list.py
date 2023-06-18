@@ -15,20 +15,18 @@ from relationship_city import City
 
 if __name__ == "__main__":
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]
+            'mysql+mysqldb://{}:{}@localhost/{}'.format(
+                sys.argv[1], sys.rgv[2], sys.argv[3]
                 )
-             )
-
+            )
     Session = sessionmaker(bind=engine)
     session = Session()
 
     results = session.query(State).all()
 
-    for result in results:
-        print("{}: {}".format(result.id, result.name))
-
-        for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+    for res in results:
+        print("{}: {}".format(res.id, res.name))
+        for c in state.cities:
+            print("\t{}: {}".format(c.id, c.name))
 
     session.close()
