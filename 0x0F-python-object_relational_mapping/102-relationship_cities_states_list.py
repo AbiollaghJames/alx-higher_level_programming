@@ -18,6 +18,6 @@ if __name__ == "__main__":
     session = Session()
     results = session.query(State).all()
     for res in results:
-        for c in state.cities:
+        for c in res.cities:
             print("{}: {} -> {}".format(c.id, c.name, res.name))
     session.close()
