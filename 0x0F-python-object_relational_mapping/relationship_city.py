@@ -4,7 +4,7 @@
 model city improvement
 """
 
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base, State
 
 
