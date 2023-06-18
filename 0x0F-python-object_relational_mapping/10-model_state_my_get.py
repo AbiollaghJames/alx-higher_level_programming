@@ -21,9 +21,8 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Sesion()
-    name_searched = sys.argv[4]
 
-    res = session.query(State).filter_by(name=name_searched).first()
+    res = session.query(State).filter_by(name=sys.argv[4]).first()
 
     if res:
         print("{}".format(res.id))
