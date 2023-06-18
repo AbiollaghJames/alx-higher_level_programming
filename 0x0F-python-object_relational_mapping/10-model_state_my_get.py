@@ -20,7 +20,7 @@ if __name__ == "__main__":
             )
 
     Session = sessionmaker(bind=engine)
-    session = Sesion()
+    session = Session()
 
     res = session.query(State).filter_by(name=sys.argv[4]).first()
 
