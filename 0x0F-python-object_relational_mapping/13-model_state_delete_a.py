@@ -18,8 +18,13 @@ if __name__ == "__main__":
                 sys.argv[1], sys.argv[2], sys.argv[3]
                 )
             )
+
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.query(State).filter(State.name.like('%a%')).delete()
-    session.commit()
+
+    res = session.query(State).filter(State.name.like('%a%'))
+    for record in res:
+        session.delete(record)
+        session.commit()
+
     session.close()
