@@ -2,21 +2,11 @@
 """ 
 a function that finds a peak in a list of unsorted integers.
 """
-
 def find_peak(list_of_integers):
-    l = len(list_of_integers)
+    """ Brute force """
+    max_value = None
 
-    if l == 0:
-        return None
-
-    if l == 1 or list_of_integers[0] >= list_of_integers[1]:
-        return list_of_integers[0]
-
-    if list_of_integers[l - 2] <= list_of_integers[l - 1]:
-        return list_of_integers[l - 1]
-
-    for i in range(1, l - 1):
-        if list_of_integers[i] >= list_of_integers[i - 1]
-        and list_of_integers[i] >= list_of_integers[i + 1]:
-            return list_of_integers[i]
-    return None
+    for val in list_of_integers:
+        if max_value is None or max_value < val:
+            max_value = val
+    return max_value
