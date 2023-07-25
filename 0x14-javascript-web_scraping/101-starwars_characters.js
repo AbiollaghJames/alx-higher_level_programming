@@ -25,6 +25,7 @@ const captureChar = (i) => {
       return;
     }
     const charsData = JSON.parse(body);
+    cosnole.log(charsData.name);
     captureChar(i + 1);
   });
 };
