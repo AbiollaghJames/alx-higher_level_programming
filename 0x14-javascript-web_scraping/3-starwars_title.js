@@ -2,15 +2,14 @@
 
 const request = require('request');
 const movieId = process.argv[2];
-const requestUrl = 'https://swapi-api.hbtn.io/api/films/${movieId}';
+const REQ_URL = 'https://swapi-api.alx-tools.com/api/films/';
 
-request(requestUrl, function (error, response, body) {
+request(REQ_URL + movieId, function (error, response, body) {
   if (error) {
-    throw new Error(error);
-  }
-  if (response.statusCode === 200) {
-    console.log(JSON.parse(body).title);;
+    console.log(error);
+  } else if (response.statusCode === 200) {
+    console.log(JSON.parse(body).title);
   } else {
-    console.log(response.statusCode)
+    console.log(response.statusCode);
   }
 });
