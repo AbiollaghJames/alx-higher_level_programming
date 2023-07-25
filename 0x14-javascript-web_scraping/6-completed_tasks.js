@@ -10,14 +10,14 @@ request(API_URL, function (err, response, body) {
     const userCompletedTasks = {};
     newBody = JSON.parse(body);
 
-    for (let i = 0; i < newBody,length; i++) {
+    for (let i = 0; i < newBody.length; i++) {
       const userId = body[i].userId;
       const completed = body[i].completed;
 
       if (completed && !userCompletedTasks[userId]) {
         userCompletedTasks[userId] = 0;
       }
-      if (completed) ++userCompletedTasks[userId];
+       if (completed) ++userCompletedTasks[userId];
     }
     console.log(userCompletedTasks);
   }
