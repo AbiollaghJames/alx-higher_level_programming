@@ -9,7 +9,7 @@ request(requestUrl, function (error, response, body) {
     throw new Error(error);
   }
   if (response.statusCode === 200) {
-    console.log(JSON.parse(body).title);;
+    console.log(JSON.parse(body).title);
   } else {
     return;
   }
