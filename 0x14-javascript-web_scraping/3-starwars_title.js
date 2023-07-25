@@ -11,6 +11,6 @@ request(requestUrl, function (error, response, body) {
   if (response.statusCode === 200) {
     console.log(JSON.parse(body).title);;
   } else {
-    return;
+    console.log(response.statusCode)
   }
 });
