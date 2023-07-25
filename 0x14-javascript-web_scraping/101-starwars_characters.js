@@ -3,12 +3,11 @@
 const request = require('request');
 const movieId = process.argv[2];
 const reqUrl = 'https://swapi-api.alx-tools.com/api/films/';
-const chars = [];
+let chars = [];
 
 request(reqUrl + movieId, function (err, response, body) {
   if (err) {
     throw new Error(err);
-    return;
   }
   const body = JSON.parse(body);
   chars = body.characters;
@@ -22,10 +21,9 @@ const captureChar = (i) => {
   request(chars[i], function (err, response, body) {
     if (err) {
       throw new Error(err);
-      return;
     }
     const charsData = JSON.parse(body);
-    cosnole.log(charsData.name);
+    console.log(charsData.name);
     captureChar(i + 1);
   });
 };
