@@ -13,5 +13,4 @@ request(requestUrl + movieId, function(error, response, body) {
   } else {
     return;
   }
-  
 });
