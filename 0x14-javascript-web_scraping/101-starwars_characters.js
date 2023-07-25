@@ -9,8 +9,8 @@ request(reqUrl + movieId, function (err, response, body) {
   if (err) {
     throw new Error(err);
   }
-  const body = JSON.parse(body);
-  chars = body.characters;
+  const newBody = JSON.parse(body);
+  chars = newBody.characters;
   captureChar(0);
 });
 
