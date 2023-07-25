@@ -10,7 +10,7 @@ request(requestUrl, function (error, response, body) {
   if (error) {
     throw new Error(error);
   } else if (response.statusCode === 200) {
-    fs.writeFile(filePath, 'utf-8', (err, data) => {
+    fs.writeFile(filePath, body, 'utf-8', (err, data) => {
       if (err) {
         throw new Error(err);
       }
