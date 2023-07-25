@@ -11,5 +11,5 @@ request(API_URL, function (error, response, body) {
     return element.characters.filter((url) => {
       return url.includes('18'); }).length;
   }).length;
-  console.log(nb);
+  console.log(num);
 });
