@@ -8,8 +8,10 @@ request(requestUrl + movieId, function(error, response, body) {
   if (error) {
     throw new Error(error);
   }
-  if (response.statusCode !== 200) {
+  if (response.statusCode === 200) {
+    console.log(JSON.parse(body.title));;
+  } else {
     return;
   }
-  console.log(JSON.parse(body.title));
+  
 });
